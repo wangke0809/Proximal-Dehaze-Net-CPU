@@ -14,6 +14,9 @@ net = Net(pnet.net);
 
 [sx, sy, ~] = size(noisy);
 I = noisy;
+
+tic
+
 for c=1:3
     I(:,:,c) = noisy(:,:,c) / light(c);
 end
@@ -55,6 +58,8 @@ restt = max(min(restt, 1), 0);
 
 resim = resim(1:end-RX, 1:end-RY, :);
 restt = restt(1:end-RX, 1:end-RY, :);
+
+toc
 
 end
 
